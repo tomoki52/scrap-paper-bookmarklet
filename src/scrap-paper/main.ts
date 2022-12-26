@@ -1,3 +1,7 @@
+const proj: string = "tomoki52";
+
+const url: string = location.href;
+
 const addLink = (text: string) => {
   return "[" + text + "]";
 };
@@ -19,19 +23,25 @@ const authors = Array.from(author_collection).map((e) => {
 const item_detail_collection = document.getElementsByClassName(
   "issue-item__detail"
 ) as HTMLCollectionOf<HTMLElement>;
+
 const conference_with_year = ((): string => {
   const e = item_detail_collection[0].children[0] as HTMLElement;
   return e.title.split(":")[0];
 })();
+
 const conference: string = conference_with_year.split(" '")[0];
-console.log(conference_with_year);
+
 const lines: string =
+  url +
+  "\n" +
   addLink(conference) +
   " " +
   addLink(conference_with_year) +
   "\n" +
-  authors.join(", ");
-const proj: string = "tomoki52";
+  authors.join(", ") +
+  "\n" +
+  "#survey";
+
 var body = encodeURIComponent(lines);
 window.open(
   "https://scrapbox.io/" +
