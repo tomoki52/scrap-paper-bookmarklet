@@ -1,5 +1,5 @@
-const proj: string = "tomoki52";
-
+import { project_url } from "./environment";
+const proj: string = project_url;
 const url: string = location.href;
 
 const addLink = (text: string) => {
