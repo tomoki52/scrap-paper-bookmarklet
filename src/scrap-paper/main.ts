@@ -29,6 +29,12 @@ const conference_with_year = ((): string => {
   return e.title.split(":")[0];
 })();
 
+const abstract_collection = document.getElementsByClassName(
+  "abstractSection abstractInFull"
+) as HTMLCollectionOf<HTMLElement>;
+
+const abstract = abstract_collection[0].children[0].textContent;
+
 const conference: string = conference_with_year.split(" '")[0];
 
 const lines: string =
@@ -39,6 +45,8 @@ const lines: string =
   addLink(conference_with_year) +
   "\n" +
   authors.join(", ") +
+  "\n" +
+  abstract +
   "\n" +
   "#survey";
 
