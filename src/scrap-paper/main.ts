@@ -45,9 +45,9 @@ const lines: string =
   addLink(conference_with_year) +
   "\n" +
   authors.join(", ") +
-  "\n" +
+  "\n\n" +
   abstract +
-  "\n" +
+  "\n\n" +
   "#survey";
 
 var body = encodeURIComponent(lines);
