@@ -46,6 +46,7 @@ const lines: string =
   "\n" +
   authors.join(", ") +
   "\n\n" +
+  ">" +
   abstract +
   "\n\n" +
   "#survey";
