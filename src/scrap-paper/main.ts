@@ -20,14 +20,11 @@ const authors = Array.from(author_collection).map((e) => {
   return addLink(e.title);
 });
 
-const item_detail_collection = document.getElementsByClassName(
-  "issue-item__detail"
+const epub_section_title_collection = document.getElementsByClassName(
+  "epub-section__title"
 ) as HTMLCollectionOf<HTMLElement>;
 
-const conference_with_year = ((): string => {
-  const e = item_detail_collection[0].children[0] as HTMLElement;
-  return e.title.split(":")[0];
-})();
+const conference_with_year = epub_section_title_collection[0].innerText.split(":")[0]
 
 const abstract_collection = document.getElementsByClassName(
   "abstractSection abstractInFull"
